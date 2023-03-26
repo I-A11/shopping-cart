@@ -1,0 +1,40 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: sans-serif;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #212529;
+  color: #fff;
+  padding: 0 4rem;
+  height: 6rem;
+  width: 100%;
+}
+
+.cart {
+  background-color: #fff;
+  color: #212529;
+  position: relative;
+  padding: 5px;
+  font-size: 2rem;
+  border-radius: 4px;
+}
+
+.cartAmount {
+  position: absolute;
+  top: -0.8rem;
+  right: -0.35rem;
+  font-size: 1rem;
+  background: #c40808;
+  color: #fff;
+  padding: 3px;
+  border-radius: 4px;
+}
