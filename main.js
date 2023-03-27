@@ -87,4 +87,11 @@ const decrement = (id) => {
 const update = (id) => {
   const search = basket.find((x) => x.id === id);
   document.getElementById(id).innerHTML = search.item;
+  calculation();
+};
+
+const calculation = () => {
+  const cartIcon = document.querySelector("#cartAmount");
+  const cartAmount = basket.map((x) => x.item);
+  cartIcon.innerHTML = cartAmount.reduce((total, curr) => total + curr, 0);
 };
