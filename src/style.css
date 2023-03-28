@@ -101,3 +101,20 @@ a {
     grid-template-columns: repeat(1, 223px);
   }
 }
+
+/* styles for cart page */
+
+.text-center {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.homeBtn {
+  background-color: #212529;
+  color: #fff;
+  border: none;
+  margin-top: 15px;
+  padding: 6px;
+  border-radius: 4px;
+  cursor: pointer;
+}
