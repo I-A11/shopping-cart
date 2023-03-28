@@ -118,3 +118,40 @@ a {
   border-radius: 4px;
   cursor: pointer;
 }
+
+.bi-x-lg {
+  color: #c40808;
+  font-weight: bold;
+}
+
+.shopping-cart {
+  display: grid;
+  grid-template-columns: repeat(1, 320px);
+  justify-content: center;
+  gap: 15px;
+}
+
+.cart-item {
+  border: #212529 2px solid;
+  border-radius: 5px;
+  display: flex;
+}
+
+.title-price-x {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 195px;
+}
+
+.title-price-x h4 {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.title-price-x span {
+  background: #212529;
+  color: #fff;
+  padding: 3px 6px;
+  border-radius: 4px;
+}
