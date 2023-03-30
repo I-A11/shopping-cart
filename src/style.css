@@ -109,7 +109,9 @@ a {
   margin-bottom: 20px;
 }
 
-.homeBtn {
+.homeBtn,
+.checkout,
+.removeAll {
   background-color: #212529;
   color: #fff;
   border: none;
@@ -154,4 +156,11 @@ a {
   color: #fff;
   padding: 3px 6px;
   border-radius: 4px;
+}
+
+.checkout {
+  background: #046404;
+}
+.removeAll {
+  background: #c40808;
 }

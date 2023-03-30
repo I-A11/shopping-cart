@@ -93,11 +93,32 @@ const update = (id) => {
   const search = basket.find((x) => x.id === id);
   document.getElementById(id).innerHTML = search.item;
   calculation();
+  totalAmount();
 };
 
 const removeItem = (id) => {
   const selectedItem = id;
   basket = basket.filter((x) => x.id !== selectedItem.id);
   generateCartItems();
+  totalAmount();
   localStorage.setItem("data", JSON.stringify(basket));
 };
+
+const totalAmount = () => {
+  if (basket.length !== 0) {
+    let amount = basket
+      .map((x) => {
+        const { id, item } = x;
+        let search = shopItemsData.find((y) => y.id === id) || [];
+        return item * search.price;
+      })
+      .reduce((total, curr) => total + curr, 0);
+    label.innerHTML = `
+      <h2>Total Bill: $ ${amount}</h2>
+      <button class="checkout">Checkout</button>
+      <button class="removeAll">Clear Cart</button>
+      `;
+  } else return;
+};
+
+totalAmount();
