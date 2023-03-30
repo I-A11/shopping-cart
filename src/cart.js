@@ -17,14 +17,15 @@ const generateCartItems = () => {
       .map((x) => {
         const { id, item } = x;
         const search = shopItemsData.find((y) => y.id === id) || [];
+        const { img, name, price } = search;
         return `
         <div class="cart-item">
-            <img width="100" src=${search.img} alt=${search.name} />
+            <img width="100" src=${img} alt=${name} />
             <div class="details">
                 <div class="title-price-x">
                     <h4>
-                        <p>${search.name}</p>
-                        <span>$ ${search.price}</span>
+                        <p>${name}</p>
+                        <span>$ ${price}</span>
                     </h4>
                     <i onclick="removeItem(${id})" class="bi bi-x-lg"></i>
                 </div>
@@ -101,6 +102,14 @@ const removeItem = (id) => {
   basket = basket.filter((x) => x.id !== selectedItem.id);
   generateCartItems();
   totalAmount();
+  calculation();
+  localStorage.setItem("data", JSON.stringify(basket));
+};
+
+const clearCart = () => {
+  basket = [];
+  generateCartItems();
+  calculation();
   localStorage.setItem("data", JSON.stringify(basket));
 };
 
@@ -116,7 +125,7 @@ const totalAmount = () => {
     label.innerHTML = `
       <h2>Total Bill: $ ${amount}</h2>
       <button class="checkout">Checkout</button>
-      <button class="removeAll">Clear Cart</button>
+      <button onclick="clearCart()" class="removeAll">Clear Cart</button>
       `;
   } else return;
 };

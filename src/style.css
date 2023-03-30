@@ -54,6 +54,7 @@ a {
   grid-template-columns: repeat(4, 223px);
   gap: 2rem;
   justify-content: center;
+  margin-bottom: 50px;
 }
 
 .item {
@@ -63,6 +64,8 @@ a {
 
 .item img {
   width: 100%;
+  border-radius: 2px 2px 0 0;
+  overflow: hidden;
 }
 
 .details {
